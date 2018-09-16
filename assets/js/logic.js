@@ -50,9 +50,9 @@ $(document).ready(function () {
                 trivia.questionNum++;
                 setTimeout(trivQ, 5000);
             });
-            $("#resetGame").on("click", function (e) {
-                $("#questionDiv").removeClass("d-none");
-                this.resetGame();
+            $("#restartGame").on("click", function (e) {
+                $("#restartGame").addClass("d-none");
+                trivia.resetGame();
             });
         },
         question: function () {
@@ -93,10 +93,8 @@ $(document).ready(function () {
             if (this.timeThirty === 0) {
                 clearInterval(this.qInterval);
                 this.unaswered++;
-                this.question();
                 this.gifImage("t");
                 let trivQ = this.question.bind(this);
-                clearInterval(this.qInterval);
                 setTimeout(trivQ, 5000);
                 $(`#${this.questions[this.questionNum].hint}`).removeClass("disabled");
                 this.questionNum++;
@@ -137,12 +135,14 @@ $(document).ready(function () {
             $("#finalScores").append(list);
         },
         resetGame: function () {
+            const trivQ =  this.question.bind(this);
             this.questionNum = 0;
             this.right = 0;
             this.timeThirty = 30;
             this.unaswered = 0;
             this.wrong = 0;
-            this.qInterval = setInterval(this.thirtyCountDisplay.bind(this), 1000);
+            $("#finalScores").empty();
+            trivQ();
         },
         hint: function () {
             $(`#${this.questions[this.questionNum].hint}`).addClass("disabled");

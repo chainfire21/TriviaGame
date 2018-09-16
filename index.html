@@ -20,13 +20,21 @@
                 <br>
                 <div id="startInfo">
                     <button type="button" class="btn btn-primary" id="startGame">Start Game</button>
-                    <div></div>
+                    <div>
+                        <br>
+                        <p class="lead">
+                            A physics based trivia game. Thirty seconds per question, 10 questions, good luck!
+                            <br>
+                            <br>
+                            <small class="text-muted">Hopefully you brushed up on physics</small>
+                        </p>
+                    </div>
                 </div>
                 <button type="button" class="btn btn-primary d-none" id="restartGame">Restart?</button>
                 <div class="container d-none" id="questionDiv">
                     <div class="progress">
-                        <div class="progress-bar bg-success" id="timeBar" role="progressbar" style="width: 100%;" aria-valuenow="100"
-                            aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-success" id="timeBar" role="progressbar" style="width: 100%;"
+                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <br>
                     <h3 id="questionTitle">Question</h3>

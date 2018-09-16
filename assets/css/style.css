@@ -1,0 +1,17 @@
+.jumbotron{
+    padding: 2rem;
+    min-height: 400px;
+}
+
+body {
+    background-image: url(../images/physicsbackground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.shadow-lg {
+    box-shadow: 0 .5rem 1rem rgba(256,256,256,.15)!important; 
+} 
+.progress{
+    height: 1.5rem;
+}
